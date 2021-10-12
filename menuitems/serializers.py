@@ -6,3 +6,7 @@ class MenuitemSerializer(serializers.ModelSerializer):
         model = Menuitem
          # fields = '__all__'
         fields = ('id','title', 'category', 'price', 'desc')
+
+            
+        def dollar_amount(self):
+            return "$%s" % self.price if self.price else "" 

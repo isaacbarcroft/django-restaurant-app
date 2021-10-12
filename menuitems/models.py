@@ -5,7 +5,7 @@ from django.db import models
 class Menuitem(models.Model):
         title = models.CharField(max_length = 255, default='SOME STRING')
         category = models.CharField(max_length = 255, default='SOME STRING')
-        price = models.CharField(max_length = 255, default='SOME STRING')
+        price = models.IntegerField(null=True)
         desc =models.TextField(default='descr')
 
         def __str__(self):
