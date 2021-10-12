@@ -5,4 +5,4 @@ class MenuitemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menuitem
          # fields = '__all__'
-        fields = ('title', 'category', 'price')
+        fields = ('id','title', 'category', 'price', 'desc')

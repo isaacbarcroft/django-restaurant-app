@@ -6,6 +6,10 @@ from .serializers import MenuitemSerializer
 
 # takes a request and returns a response
 # request handler
-class MenuitemsAPIView(generics.ListAPIView):
+class MenuitemsAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Menuitem.objects.all()
+    serializer_class = MenuitemSerializer
+
+class MenuitemsDetailsAPIView(generics.ListAPIView):
     queryset = Menuitem.objects.all()
     serializer_class = MenuitemSerializer
