@@ -1,0 +1,8 @@
+<h2>Menu List</h2>
+<ul>
+    {% for menu in object_list %}
+        <h4>{{menu.title}}</h4>
+        <span>{{menu.category}}</span>
+        <p>{{menu.price}}</p>
+    {% endfor %}
+</ul>
