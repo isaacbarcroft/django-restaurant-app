@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-restaurant-app--isaac.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['django-restaurant-app--isaac.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -41,12 +41,16 @@ INSTALLED_APPS = [
 
     #Third Party
     'rest_framework',
+    "corsheaders",
 
     #Local
-    'menuitems.apps.MenuitemsConfig'
+    'menuitems.apps.MenuitemsConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
+     "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
