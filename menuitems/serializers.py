@@ -5,7 +5,7 @@ class MenuitemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menuitem
          # fields = '__all__'
-        fields = ('id','title', 'category', 'price', 'desc')
+        fields = ('id','title', 'category', 'image', 'price', 'desc')
 
             
         def dollar_amount(self):
